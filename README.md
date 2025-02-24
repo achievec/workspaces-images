@@ -42,3 +42,10 @@ A self-guided on-demand demo is available at [**kasmweb.com**](https://www.kasmw
 
 [logo]: https://cdn2.hubspot.net/hubfs/5856039/dockerhub/kasm_logo.png "Kasm Logo"
 [Kasm_Workflow]: https://cdn2.hubspot.net/hubfs/5856039/dockerhub/kasm_workflow_960.gif "Kasm Workflow"
+
+
+# firefox
+```
+docker build -f dockerfile-kasm-firefox -t kasm-firefox .
+docker run --rm -it --shm-size=512m -p 6901:6901 -e VNC_PW=password kasm-firefox
+```

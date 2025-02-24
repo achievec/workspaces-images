@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -ex
-START_COMMAND="playwright launch-server --browser firefox --config /dockerstartup/install/playwright_config.json"
+START_COMMAND="playwright launch-server --browser firefox --config /home/kasm-user/playwright_config.json"
 PGREP="firefox"
 export MAXIMIZE="true"
 export MAXIMIZE_NAME="Mozilla Firefox"

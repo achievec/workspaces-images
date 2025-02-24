@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -ex
-START_COMMAND="firefox"
+START_COMMAND="playwright launch-server --browser firefox --config /dockerstartup/install/playwright_config.json"
 PGREP="firefox"
 export MAXIMIZE="true"
 export MAXIMIZE_NAME="Mozilla Firefox"
+# Nightly
 MAXIMIZE_SCRIPT=$STARTUPDIR/maximize_window.sh
 DEFAULT_ARGS=""
 ARGS=${APP_ARGS:-$DEFAULT_ARGS}

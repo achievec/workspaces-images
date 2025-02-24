@@ -47,5 +47,7 @@ A self-guided on-demand demo is available at [**kasmweb.com**](https://www.kasmw
 # firefox
 ```
 docker build -f dockerfile-kasm-firefox -t kasm-firefox .
-docker run --rm -it --shm-size=512m -p 6901:6901 -e VNC_PW=password kasm-firefox
+docker run --rm -it --shm-size=512m -p 6901:6901 -p 9222:9222 -e VNC_PW=password kasm-firefox
+
+wmctrl -l
 ```

@@ -3,7 +3,7 @@ set -ex
 START_COMMAND="playwright launch-server --browser firefox --config /home/kasm-user/playwright_config.json"
 PGREP="firefox"
 export MAXIMIZE="true"
-export MAXIMIZE_NAME="Mozilla Firefox"
+export MAXIMIZE_NAME="Nightly"
 # Nightly
 MAXIMIZE_SCRIPT=$STARTUPDIR/maximize_window.sh
 DEFAULT_ARGS=""
@@ -83,8 +83,17 @@ kasm_startup() {
 
 }
 
+open_browser() {
+  cd /home/kasm-user/
+  npm init -y
+  npm install  playwright@1.39.0
+  pm2 start /home/kasm-user/open_browser.js --name "playwright"
+}
+
 if [ -n "$GO" ] || [ -n "$ASSIGN" ] ; then
+    open_browser
     kasm_exec
 else
+    open_browser
     kasm_startup
 fi

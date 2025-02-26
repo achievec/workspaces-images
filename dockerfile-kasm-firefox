@@ -15,6 +15,7 @@ WORKDIR $HOME
 COPY ./src/ubuntu/install/firefox/playwright_config.json /home/kasm-user/
 COPY ./src/ubuntu/install/firefox/ $INST_SCRIPTS/firefox/
 COPY ./src/ubuntu/install/firefox/firefox.desktop $HOME/Desktop/
+RUN bash $INST_SCRIPTS/firefox/install_playwright.sh
 RUN bash $INST_SCRIPTS/firefox/install_firefox.sh
 
 # Update the desktop environment to be optimized for a single application
@@ -28,6 +29,8 @@ RUN  bash $INST_SCRIPTS/misc/single_app_security.sh -t && rm -rf $INST_SCRIPTS/m
 
 # Setup the custom startup script that will be invoked when the container starts
 #ENV LAUNCH_URL  http://kasmweb.com
+
+COPY ./src/ubuntu/install/firefox/open_browser.js /home/kasm-user/
 
 COPY ./src/ubuntu/install/firefox/custom_startup.sh $STARTUPDIR/custom_startup.sh
 RUN chmod +x $STARTUPDIR/custom_startup.sh

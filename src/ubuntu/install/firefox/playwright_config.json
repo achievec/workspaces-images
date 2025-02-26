@@ -1,6 +1,5 @@
 {
   "headless": false,
   "wsPath": "playwright",
-  "port": 9222,
-  "executablePath": "/usr/bin/firefox"
+  "port": 9222
 }
